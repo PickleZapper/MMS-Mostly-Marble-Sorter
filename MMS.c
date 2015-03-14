@@ -41,6 +41,7 @@ task main(){
     wait(0.2);
     setServo(servoGate2, 0);
     wait(0.2);
+    
     setServo(servoCups, 0);
     
     x++;
