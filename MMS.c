@@ -18,20 +18,23 @@ task main(){
     wait(0.2);
     
     if(SensorValue(lightSensor) > 300){
-    
+      
       if(SensorValue(lineFollower) < 1000){ //metal
+      
         setServo(servoCups, 0); //redundant
         wait(0.1);
+        
       }
-      
       else{ //white
+      
         setServo(servoCups, 120);
         wait(0.1);
+        
       }
-      
     }
-    else{
     
+    else{
+      
       setServo(servoCups, -127);
       wait(0.1);
       
