@@ -2,7 +2,7 @@
 #pragma config(Sensor, in2,    lightSensor,     sensorReflection)
 #pragma config(Motor,  port1,           flashlight,    tmotorVexFlashlight, openLoop, reversed)
 #pragma config(Motor,  port2,           servoGate1,  tmotorServoStandard, openLoop)
-#pragma config(Motor,  port3,           servoGate2, tmotorServoStandard, openLoop)
+#pragma config(Motor,  port3,           servoGate2, tmotorServoStandard, openLoop, reversed)
 #pragma config(Motor,  port4,           servoCups, tmotorServoStandard, openLoop)
 
 task main(){
@@ -14,7 +14,7 @@ task main(){
   
     setServo(servoGate1, 60);
     wait(0.2);
-    setServo(servoGate2, 0);
+    setServo(servoGate1, 0);
     wait(0.2);
     
     if(SensorValue(lightSensor) > 300){
@@ -33,14 +33,14 @@ task main(){
       }
     }
     
-    else{
+    else{ //clear
       
       setServo(servoCups, -127);
       wait(0.1);
       
     }
     
-    setServo(servoGate2, -75);
+    setServo(servoGate2, 75);
     wait(0.2);
     setServo(servoGate2, 0);
     wait(0.2);
@@ -48,5 +48,5 @@ task main(){
     setServo(servoCups, 0);
     
     x++;
-  }
-}
+  } //end of loop
+} //end
