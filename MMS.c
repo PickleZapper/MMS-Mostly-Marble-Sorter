@@ -9,6 +9,7 @@ task main(){
   
   turnFlashlightOn(flashlight, 127);
   int marbleCount = 0;
+  int x = 0;
   
   while(marbleCount < 15){
   
