@@ -21,13 +21,13 @@ task main(){
     setServo(servoGate1, 65);
     wait(0.2);
     setServo(servoGate1, 0);
-    wait(0.3);
+    wait(0.2);
     
     if(SensorValue(lightSensor) > 300){
       
       if(SensorValue(lineFollower) < 1000){ //metal
         setServo(servoCups, 0); //redundant
-        wait(0.1);
+        //wait(0.1);
       }
       else{ //white
         setServo(servoCups, 120);
