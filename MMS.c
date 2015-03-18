@@ -10,7 +10,6 @@ task main(){
   
   turnFlashlightOn(flashlight, 127);
   int marbleCount = 0;
-  int x = 0;
   int distance = SensorValue(rangeFinder);
   
   while(distance == SensorValue(rangeFinder))
@@ -23,7 +22,7 @@ task main(){
     setServo(servoGate1, 0);
     wait(0.2);
     
-    if(SensorValue(lightSensor) > 300){
+    if(SensorValue(lightSensor) > 500){
       
       if(SensorValue(lineFollower) < 1000){ //metal
         setServo(servoCups, 0); //redundant
