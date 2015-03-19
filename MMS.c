@@ -23,7 +23,7 @@ task main(){
     setServo(servoGate1, 0);
     wait(0.3);
     
-    if(SensorValue(lightSensor) > 500){
+    if(SensorValue(lightSensor) > 450){
       
       if(SensorValue(lineFollower) < 1000){ //metal
         setServo(servoCups, 0); //redundant
