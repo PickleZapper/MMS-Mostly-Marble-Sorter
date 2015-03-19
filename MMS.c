@@ -10,17 +10,18 @@ task main(){
   
   turnFlashlightOn(flashlight, 127);
   int marbleCount = 0;
+  wait(0.1);
   int distance = SensorValue(rangeFinder);
   
-  while(distance == SensorValue(rangeFinder))
-  {}
+  while(distance <= SensorValue(rangeFinder) + 2 && distance >= SensorValue(rangeFinder) - 2)
+  {waitInMilliseconds(1);}
   
   while(marbleCount < 15){
   
-    setServo(servoGate1, 65);
-    wait(0.2);
+    setServo(servoGate1, 60);
+    wait(0.3);
     setServo(servoGate1, 0);
-    wait(0.2);
+    wait(0.3);
     
     if(SensorValue(lightSensor) > 500){
       
